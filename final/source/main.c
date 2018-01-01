@@ -39,7 +39,18 @@ void range()
 		for (i = 0; i<4; i++)
 			for (j = 0; j < 4; j++)
 			{
-				guess[i] == ans[j] && (i == j ? a++ : b++);
+				if (guess[i] == ans[j])
+				{
+					if (i == j)
+					{
+						a++;
+					}
+						
+					else
+					{
+						b++;
+					}
+				}
 			}
 		if (a != 4 && times != 0)
 		{
@@ -83,7 +94,19 @@ void norange()
 		{
 			for (j = 0; j < 4; j++)
 			{
-				guess[i] == ans[j] && (i == j ? a++ : b++);
+				if (guess[i] == ans[j])
+				{
+					if (i == j)
+					{
+						a++;
+					}
+						
+					else
+					{
+						b++;
+					}
+						
+				}
 			}
 		}
 
