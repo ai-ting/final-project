@@ -7,17 +7,19 @@ void norange();
 int main(void)
 {
 	int mode = 0;
-	printf("歡迎來到猜數字遊戲!\n請選擇遊戲模式(1是5次內猜出來，2是猜中為止):");
-	scanf("%d", &mode);
-	switch (mode)
-	{
-	case 1:
-		range();
-		break;
-	case 2:
-		norange();
-		break;
-	}
+	do {
+		printf("歡迎來到猜數字遊戲!\n請選擇遊戲模式(1是5次內猜出來，2是猜中為止):");
+		scanf("%d", &mode);
+		switch (mode)
+		{
+		case 1:
+			range();
+			break;
+		case 2:
+			norange();
+			break;
+		}
+	} while (mode != 1 || mode != 2);
 }
 void range()
 {
@@ -29,7 +31,10 @@ void range()
 	{
 		for (j = 0; j < i; j++)
 		{
-			ans[j] == ans[i] && i--; //把目前的電腦數字全部檢查，若相同且i不是0則i減1重新產生
+			if (ans[j]==ans[i])
+			{
+				i--;
+			}//把目前的電腦數字全部檢查，若相同且i不是0則i減1重新產生
 
 		}
 	}
@@ -51,7 +56,7 @@ void range()
 
 	if (a == 4)
 	{
-		printf("猜對了!答案是%d\n", ans);
+		printf("答對了!");
 	}
 	else
 	{
@@ -71,7 +76,10 @@ void norange()
 	{
 		for (j = 0; j < i; j++)
 		{
-			ans[j] == ans[i] && i--;
+			if (ans[j] == ans[i])
+			{
+				i--;
+			}
 		}
 	}
 
