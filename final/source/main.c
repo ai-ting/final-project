@@ -31,7 +31,10 @@ void range()
 	{
 		for (j = 0; j < i; j++)
 		{
-			ans[j] == ans[i] && i--; //把目前的電腦數字全部檢查，若相同且i不是0則i減1重新產生
+			if (ans[j]==ans[i])
+			{
+				i--;
+			}//把目前的電腦數字全部檢查，若相同且i不是0則i減1重新產生
 
 		}
 	}
@@ -53,7 +56,7 @@ void range()
 
 	if (a == 4)
 	{
-		printf("猜對了!答案是%d\n", ans);
+		printf("答對了!");
 	}
 	else
 	{
@@ -73,7 +76,10 @@ void norange()
 	{
 		for (j = 0; j < i; j++)
 		{
-			ans[j] == ans[i] && i--;
+			if (ans[j] == ans[i])
+			{
+				i--;
+			}
 		}
 	}
 
